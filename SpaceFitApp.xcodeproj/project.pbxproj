@@ -13,6 +13,7 @@
 		27AFC3C42745654E007B60F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AFC3C32745654E007B60F8 /* ContentView.swift */; };
 		27AFC3C627456550007B60F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AFC3C527456550007B60F8 /* Assets.xcassets */; };
 		27AFC3C927456550007B60F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AFC3C827456550007B60F8 /* Preview Assets.xcassets */; };
+		AFDD8F22274667D20003E2DC /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD8F21274667D20003E2DC /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		27AFC3C32745654E007B60F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		27AFC3C527456550007B60F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27AFC3C827456550007B60F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFDD8F21274667D20003E2DC /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				276BB02627465B9700B5A333 /* DescriptionView.swift */,
 				27AFC3C12745654E007B60F8 /* SpaceFitAppApp.swift */,
 				27AFC3C32745654E007B60F8 /* ContentView.swift */,
+				AFDD8F21274667D20003E2DC /* ProgressBar.swift */,
 				276BB02427465B6D00B5A333 /* TutorialView.swift */,
 				27AFC3C527456550007B60F8 /* Assets.xcassets */,
 				27AFC3C727456550007B60F8 /* Preview Content */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDD8F22274667D20003E2DC /* ProgressBar.swift in Sources */,
 				27AFC3C42745654E007B60F8 /* ContentView.swift in Sources */,
 				27AFC3C22745654E007B60F8 /* SpaceFitAppApp.swift in Sources */,
 				276BB02527465B6D00B5A333 /* TutorialView.swift in Sources */,
