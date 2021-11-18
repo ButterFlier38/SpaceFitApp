@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276BB02527465B6D00B5A333 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BB02427465B6D00B5A333 /* TutorialView.swift */; };
+		276BB02727465B9700B5A333 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BB02627465B9700B5A333 /* DescriptionView.swift */; };
 		27AFC3C22745654E007B60F8 /* SpaceFitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AFC3C12745654E007B60F8 /* SpaceFitAppApp.swift */; };
 		27AFC3C42745654E007B60F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AFC3C32745654E007B60F8 /* ContentView.swift */; };
 		27AFC3C627456550007B60F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AFC3C527456550007B60F8 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		276BB02427465B6D00B5A333 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		276BB02627465B9700B5A333 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		27AFC3BE2745654E007B60F8 /* SpaceFitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceFitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AFC3C12745654E007B60F8 /* SpaceFitAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceFitAppApp.swift; sourceTree = "<group>"; };
 		27AFC3C32745654E007B60F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,8 +55,10 @@
 		27AFC3C02745654E007B60F8 /* SpaceFitApp */ = {
 			isa = PBXGroup;
 			children = (
+				276BB02627465B9700B5A333 /* DescriptionView.swift */,
 				27AFC3C12745654E007B60F8 /* SpaceFitAppApp.swift */,
 				27AFC3C32745654E007B60F8 /* ContentView.swift */,
+				276BB02427465B6D00B5A333 /* TutorialView.swift */,
 				27AFC3C527456550007B60F8 /* Assets.xcassets */,
 				27AFC3C727456550007B60F8 /* Preview Content */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				27AFC3C42745654E007B60F8 /* ContentView.swift in Sources */,
 				27AFC3C22745654E007B60F8 /* SpaceFitAppApp.swift in Sources */,
+				276BB02527465B6D00B5A333 /* TutorialView.swift in Sources */,
+				276BB02727465B9700B5A333 /* DescriptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
