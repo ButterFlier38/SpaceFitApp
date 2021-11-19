@@ -216,7 +216,7 @@ struct CorePage: View {
                 .padding()
                 
                 HStack{
-                Image(uiImage: UIImage(named: "Crunch.jpeg")!)
+                Image(uiImage: UIImage(named: "Crunch1.jpeg")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
