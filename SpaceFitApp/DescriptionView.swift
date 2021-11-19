@@ -93,7 +93,7 @@ struct DescriptionView: View {
                     RoundedRectangle(cornerRadius: 35)
                         .fill(Color.blue)
                         .frame(width: 418,height: 250)
-//                        .offset(y:35)
+                        .position(x: 208, y: 135)
                     
               /*      Button("Press Me") {
                         print("Button pressed!")
@@ -104,6 +104,7 @@ struct DescriptionView: View {
                     
                     Text(convertSecondsToTime(timeInSeconds:timeRemaining))
                         .font(.system(size: 40))
+                        .position(x: 210, y: 70)
                         .onReceive(timer) { _ in
                             if isStarted{timeRemaining -= 1}
                         }
@@ -125,6 +126,7 @@ struct DescriptionView: View {
                             .background(Color.white)
                             .foregroundColor(.blue)
                             .clipShape(Capsule())
+                            .position(x: 92, y: 145)
                             
                     Spacer().frame(minWidth:5,maxWidth:140)
                    
@@ -135,7 +137,7 @@ struct DescriptionView: View {
                             .background(Color.pink)
                             .foregroundColor(.white)
                             .clipShape(Capsule())
-//                            .position(x: 120, y:-80)
+                            .position(x: 50, y: 145)
                     }
                     }
                    
