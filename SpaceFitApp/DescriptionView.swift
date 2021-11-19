@@ -19,6 +19,14 @@ struct GrowingButton: ButtonStyle {
 }
 
 struct DescriptionView: View {
+    @State var timeRemaining = 128
+    @State var isStarted : Bool = false
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+   func convertSecondsToTime(timeInSeconds: Int)-> String{
+       let minutes = timeInSeconds / 60
+       let seconds = timeInSeconds % 60
+       return String(format:"%02i:%02i", minutes, seconds)
+   }
     var body: some View {
         VStack {
             NavigationView {
@@ -81,10 +89,11 @@ struct DescriptionView: View {
                     
                     
                     Spacer()
+                    ZStack{
                     RoundedRectangle(cornerRadius: 35)
                         .fill(Color.blue)
                         .frame(width: 418,height: 250)
-                        .offset(y:35)
+//                        .offset(y:35)
                     
               /*      Button("Press Me") {
                         print("Button pressed!")
@@ -93,20 +102,31 @@ struct DescriptionView: View {
                     .background(Color(red: 0, green: 0, blue: 0.5))
                     .clipShape(Circle())    */
                     
-                    Text("TIMER")
-                        .position(x: 210, y: -150)
+                    Text(convertSecondsToTime(timeInSeconds:timeRemaining))
+                        .font(.system(size: 40))
+                        .onReceive(timer) { _ in
+                            if isStarted{timeRemaining -= 1}
+                        }
                     
                     
                     HStack{
-                    Button("Start/Pause") {
+                    Button{
+                        isStarted.toggle()
                                 print("Button pressed!")
+                            } label:{
+                                ZStack{
+//                                    Circle().scaleEffect(0.5)
+                                    if isStarted{Text("Pause").foregroundColor(.black)}else{Text("Start").foregroundColor(.black)}
+                                
+                       
+                                    }
                             }
                             .buttonStyle(GrowingButton())
                             .background(Color.white)
                             .foregroundColor(.blue)
                             .clipShape(Capsule())
-                            .position(x: 100, y:-80 )
-                    
+                            
+                    Spacer().frame(minWidth:5,maxWidth:140)
                    
                     Button("Stop") {
                                 print("Button pressed!")
@@ -115,8 +135,8 @@ struct DescriptionView: View {
                             .background(Color.pink)
                             .foregroundColor(.white)
                             .clipShape(Capsule())
-                            .position(x: 120, y:-80)
-                            
+//                            .position(x: 120, y:-80)
+                    }
                     }
                    
                     
