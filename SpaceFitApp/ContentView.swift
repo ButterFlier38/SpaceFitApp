@@ -55,7 +55,7 @@ struct AerobicPage: View {
             VStack {
                 Spacer()
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "aerobic1.JPEG")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -67,7 +67,7 @@ struct AerobicPage: View {
                 .padding()
                 
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "aerobic3.JPEG")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -83,23 +83,18 @@ struct AerobicPage: View {
             VStack {
                 Spacer()
                 HStack{
-                    
-                    NavigationLink(destination: DescriptionView()){
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "aerobic2.JPEG")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
                     .overlay(
                             RoundedRectangle(cornerRadius: 15)
                                 .stroke(Color.gray, lineWidth: 2)
-                        )
-                    
-                    }
-                }
+                        )                }
                 .padding()
 
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "aerobic4.JPEG")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -137,7 +132,7 @@ struct PowerPage: View {
             VStack {
                 Spacer()
                 HStack{
-                Image(uiImage: UIImage(named: "Earth.png")!)
+                Image(uiImage: UIImage(named: "Squat-1.JPEG")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -148,7 +143,7 @@ struct PowerPage: View {
                 .padding()
                 
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "Squat jump.jpeg")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -162,7 +157,7 @@ struct PowerPage: View {
             VStack {
                 Spacer()
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "Lunges.jpeg")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -173,7 +168,7 @@ struct PowerPage: View {
                 .padding()
 
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "Sumo squat.jpeg")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -210,7 +205,7 @@ struct CorePage: View {
             VStack {
                 Spacer()
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "Planks.jpeg")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -221,7 +216,7 @@ struct CorePage: View {
                 .padding()
                 
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "Crunch.jpeg")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -235,7 +230,7 @@ struct CorePage: View {
             VStack {
                 Spacer()
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "Superman.jpeg")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
@@ -246,7 +241,7 @@ struct CorePage: View {
                 .padding()
 
                 HStack{
-                Image(uiImage: UIImage(named: "CircleProgress.png")!)
+                Image(uiImage: UIImage(named: "Leg raise.jpeg")!)
                     .resizable()
                     .frame(width: 130, height: 130)
                     .padding()
