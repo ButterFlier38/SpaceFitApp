@@ -30,20 +30,8 @@ struct DescriptionView: View {
     var body: some View {
         VStack {
             NavigationView {
-                
-                
-                
-                VStack {
-                    //                    HStack{
-                    //                        Button{
-                    //                            NavigationLink(destination: Text("Destination")) { /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Navigate") }} label:{Text("Back")}
-                    //                            .position(x: 34, y: -65)
-                    //                        //                    Spacer()
-                    //                        Text("").navigationBarTitle("Squat")
-                    //
-                    //
-                    //
-                    //                    }
+                       VStack {
+                    
                     
                     Image(uiImage: UIImage(named: "squat.png")!)
                         .resizable().aspectRatio(contentMode: .fit)
@@ -60,12 +48,7 @@ struct DescriptionView: View {
                         Text(" Description")
                             .font(.system(size: 30.0))
 //                            .position(x: -90, y: 53)
-                        
-                        
-                        
-                        
-                        
-                    }
+                   }
                     
                     Text("1: Stand with your feet shoulder-width apart.       2: Squat down as A with your arms bent next your side.                                                                            3: Drive back up through your heels into a jump, moving your arms down and back B.              *After you jump make sure to bend your knees on the landing, this will help you to land safely.           4: Repeat the process 20 times until the timer runs out.")
                         .font(.system(size: 18.0))
@@ -142,8 +125,7 @@ struct DescriptionView: View {
                     }
                    
                     
-                }
-                .navigationTitle("Squat")
+                }.navigationBarTitle("Squat")
             }
             }
             /*   Spacer()
@@ -157,10 +139,11 @@ struct DescriptionView: View {
     //        .navigationBarTitle("Aerobic")
     
 
-
 struct DescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        DescriptionView()
+        DescriptionView().preferredColorScheme(.dark)
     }
 }
+
+
 //ciao

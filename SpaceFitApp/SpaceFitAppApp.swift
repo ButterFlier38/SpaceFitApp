@@ -12,6 +12,7 @@ struct SpaceFitAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            
         }
     }
 }

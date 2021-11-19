@@ -83,6 +83,8 @@ struct AerobicPage: View {
             VStack {
                 Spacer()
                 HStack{
+                    
+                    NavigationLink(destination: DescriptionView()){
                 Image(uiImage: UIImage(named: "CircleProgress.png")!)
                     .resizable()
                     .frame(width: 130, height: 130)
@@ -90,7 +92,10 @@ struct AerobicPage: View {
                     .overlay(
                             RoundedRectangle(cornerRadius: 15)
                                 .stroke(Color.gray, lineWidth: 2)
-                        )                }
+                        )
+                    
+                    }
+                }
                 .padding()
 
                 HStack{
