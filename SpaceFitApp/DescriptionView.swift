@@ -21,9 +21,7 @@ struct GrowingButton: ButtonStyle {
 struct DescriptionView: View {
     var timeRemaining : Int = 4
     @State var isStarted : Bool = false
-  
     var exercise: ExerciseInfo
-//    var exercise: ExerciseInfo
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
    func convertSecondsToTime(timeInSeconds: Int)-> String{
        let minutes = timeInSeconds / 60
@@ -56,7 +54,7 @@ struct DescriptionView: View {
                     Text("\(exercise.description)")
                         .font(.system(size: 18.0))
 //                        .position(x: 200, y: 114)
-                        .frame(width: 400, height: 150, alignment: .top)
+                        .frame(width: 400, height: 125, alignment: .top)
                     
                     
                     HStack{
@@ -76,10 +74,11 @@ struct DescriptionView: View {
                     
                     Spacer()
                     ZStack{
+                        Spacer()
                     RoundedRectangle(cornerRadius: 35)
                         .fill(Color.blue)
-                        .frame(width: 418,height: 250)
-                        .position(x: 208, y: 135)
+                        .frame(width: 418,height: 300)
+                        .position(x: 208, y: 150)
                     
               /*      Button("Press Me") {
                         print("Button pressed!")
@@ -91,7 +90,7 @@ struct DescriptionView: View {
                       
                         var timeRemaining = exercise.time
                     Text(convertSecondsToTime(timeInSeconds:timeRemaining))
-                        .font(.system(size: 40))
+                        .font(.system(size: 50))
                         .position(x: 210, y: 70)
                         .onReceive(timer) { _ in
                             if isStarted{timeRemaining -= 1}
@@ -109,19 +108,25 @@ struct DescriptionView: View {
                             .background(Color.white)
                             .foregroundColor(.blue)
                             .clipShape(Capsule())
+                            .font(.system(size: 20))
                             .position(x: 92, y: 145)
                             
                     Spacer().frame(minWidth:5,maxWidth:140)
-                   
+                    
+                     NavigationLink(destination: ContentView()){
                     Button("Stop") {
                                 print("Button pressed!")
+                      
                             }
                             .buttonStyle(GrowingButton())
                             .background(Color.pink)
                             .foregroundColor(.white)
                             .clipShape(Capsule())
+                            .font(.system(size: 20))
                             .position(x: 50, y: 145)
+                     }
                     }
+                 }
                     }
               }.navigationTitle("\(exercise.name) ").navigationBarTitleDisplayMode(.large)
             }
@@ -129,7 +134,7 @@ struct DescriptionView: View {
         }
    
 
-    }
+    
 
 
 

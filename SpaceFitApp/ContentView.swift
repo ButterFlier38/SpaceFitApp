@@ -12,7 +12,7 @@ struct ContentView: View {
         UINavigationBar.appearance().backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
         }
 var body: some View {
-        NavigationView {
+    NavigationView{
         TabView {
             AerobicPage()
                 .tabItem{
@@ -30,9 +30,10 @@ var body: some View {
                         Image(systemName: "square.grid.3x3.middle.filled")
                         Text("Core")
                 }
-        }
+        
     }
     }
+}
 }
 let PageColor : Color = Color(red: 255/255, green: 255/255, blue: 255/255)
 
@@ -45,7 +46,9 @@ struct AerobicPage: View {
     ]
     var body: some View {
         
+            
              VStack{
+               
                     MyProgressBar(progressValue: $progressValue)
                         .frame(width: 150.0, height: 150.0)
                         .padding(30.0)
@@ -62,9 +65,10 @@ struct AerobicPage: View {
                                             RoundedRectangle(cornerRadius: 15)
                                                 .stroke(Color.gray, lineWidth: 2)
                                         )
-                                 }.navigationBarTitle("Aeric").navigationBarTitleDisplayMode(.large)
+                                 }
+                              .navigationBarTitle("Aerobic").navigationBarTitleDisplayMode(.large)
                         }})
- }
+             }
 }}
     
 struct PowerPage: View {
@@ -75,6 +79,7 @@ struct PowerPage: View {
         GridItem(.flexible(minimum: 175))
     ]
     var body: some View {
+       
         VStack{
                             MyProgressBar(progressValue: $progressValue)
                                 .frame(width: 150.0, height: 150.0)
@@ -95,8 +100,8 @@ struct PowerPage: View {
                                          }
                                 }})
             
-         }.navigationBarTitle("Power").navigationBarTitleDisplayMode(.large)
-}}
+         }.navigationBarTitle("Power")
+    }}
 
 struct CorePage: View {
     @StateObject var exerciseTypes = CoreTypes()
@@ -106,7 +111,7 @@ struct CorePage: View {
         GridItem(.flexible(minimum: 175))
     ]
     var body: some View {
-        
+    
         VStack{
                     MyProgressBar(progressValue: $progressValue)
                                 .frame(width: 150.0, height: 150.0)
@@ -128,7 +133,7 @@ struct CorePage: View {
                                 }})
          }
           
-    }
+        }
     }
 
 struct ContentView_Previews: PreviewProvider {
