@@ -15,6 +15,7 @@
 		27AFC3C42745654E007B60F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AFC3C32745654E007B60F8 /* ContentView.swift */; };
 		27AFC3C627456550007B60F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AFC3C527456550007B60F8 /* Assets.xcassets */; };
 		27AFC3C927456550007B60F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AFC3C827456550007B60F8 /* Preview Assets.xcassets */; };
+		AF8DDDCF274AF6EA00E7B826 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DDDCE274AF6EA00E7B826 /* UtilityFunctions.swift */; };
 		AFDD8F22274667D20003E2DC /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD8F21274667D20003E2DC /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		27AFC3C32745654E007B60F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		27AFC3C527456550007B60F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27AFC3C827456550007B60F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AF8DDDCE274AF6EA00E7B826 /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		AFDD8F21274667D20003E2DC /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 				2704AD4E2747C1B2005229FA /* ExerciseInfo.swift */,
 				2704AD502747C1D4005229FA /* ExerciseTypes.swift */,
 				276BB02627465B9700B5A333 /* DescriptionView.swift */,
+				AF8DDDCE274AF6EA00E7B826 /* UtilityFunctions.swift */,
 				27AFC3C12745654E007B60F8 /* SpaceFitAppApp.swift */,
 				27AFC3C32745654E007B60F8 /* ContentView.swift */,
 				AFDD8F21274667D20003E2DC /* ProgressBar.swift */,
@@ -158,6 +161,7 @@
 				276BB02527465B6D00B5A333 /* TutorialView.swift in Sources */,
 				276BB02727465B9700B5A333 /* DescriptionView.swift in Sources */,
 				2704AD512747C1D4005229FA /* ExerciseTypes.swift in Sources */,
+				AF8DDDCF274AF6EA00E7B826 /* UtilityFunctions.swift in Sources */,
 				2704AD4F2747C1B2005229FA /* ExerciseInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

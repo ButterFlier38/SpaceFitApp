@@ -22,12 +22,6 @@ struct DescriptionView: View {
     var exercise: ExerciseInfo
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
-    func convertSecondsToTime(timeInSeconds: Int)-> String{
-        let minutes = timeInSeconds / 60
-        let seconds = timeInSeconds % 60
-        return String(format:"%02i:%02i", minutes, seconds)
-    }
-
     var body: some View {
         VStack {
             VStack {
