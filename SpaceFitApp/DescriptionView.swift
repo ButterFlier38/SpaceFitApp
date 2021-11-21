@@ -19,7 +19,7 @@ struct GrowingButton: ButtonStyle {
 }
 
 struct DescriptionView: View {
-    @State var timeRemaining = 128
+    var timeRemaining : Int = 4
     @State var isStarted : Bool = false
   
     var exercise: ExerciseInfo
@@ -28,24 +28,23 @@ struct DescriptionView: View {
    func convertSecondsToTime(timeInSeconds: Int)-> String{
        let minutes = timeInSeconds / 60
        let seconds = timeInSeconds % 60
-       return String(format:"%02i:%02i", minutes, seconds)
+    return String(format:"%02i:%02i", minutes, seconds)
    }
     var body: some View {
 //        NavigationView {
         VStack {
-           
-                       VStack {
-                    
-                    
-                    Image(exercise.imageName)
+              VStack {
+                   Image(exercise.imageName)
                         .resizable().aspectRatio(contentMode: .fit)
                         .padding(.horizontal)
                         .frame(width: 200,height: 200)
-                    
+                        .overlay(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.gray, lineWidth: 2)
+                            )
                     
                     HStack{
-                        
-                        Image(systemName: "figure.walk").foregroundColor(.blue)
+                      Image(systemName: "figure.walk").foregroundColor(.blue)
                             .font(.system(size: 25.0))
 //                            .position(x: 30, y: 53)
                         
@@ -57,7 +56,7 @@ struct DescriptionView: View {
                     Text("\(exercise.description)")
                         .font(.system(size: 18.0))
 //                        .position(x: 200, y: 114)
-                        .frame(width: 400, height: 200, alignment: .top)
+                        .frame(width: 400, height: 150, alignment: .top)
                     
                     
                     HStack{
@@ -71,7 +70,7 @@ struct DescriptionView: View {
                         
                     }
 //                    let DurationSquat = "30 min"
-                    Text ("\(exercise.time) min")
+                    Text ("\(exercise.timeMin) min")
                         .font(.system(size: 15.0))
                     
                     
@@ -89,25 +88,22 @@ struct DescriptionView: View {
                     .background(Color(red: 0, green: 0, blue: 0.5))
                     .clipShape(Circle())    */
 //                        exercise.time = timeRemaining
+                      
+                        var timeRemaining = exercise.time
                     Text(convertSecondsToTime(timeInSeconds:timeRemaining))
                         .font(.system(size: 40))
                         .position(x: 210, y: 70)
                         .onReceive(timer) { _ in
                             if isStarted{timeRemaining -= 1}
                         }
-                    
-                    
-                    HStack{
+                 HStack{
                     Button{
                         isStarted.toggle()
                                 print("Button pressed!")
                             } label:{
                                 ZStack{
-//                                    Circle().scaleEffect(0.5)
-                                    if isStarted{Text("Pause").foregroundColor(.black)}else{Text("Start").foregroundColor(.black)}
-                                
-                       
-                                    }
+                               if isStarted{Text("Pause").foregroundColor(.yellow)}else{Text("Start").foregroundColor(.green)}
+                                }
                             }
                             .buttonStyle(GrowingButton())
                             .background(Color.white)
@@ -127,25 +123,13 @@ struct DescriptionView: View {
                             .position(x: 50, y: 145)
                     }
                     }
-                   
-                    
-                }
+              }.navigationTitle("\(exercise.name) ").navigationBarTitleDisplayMode(.large)
             }
           
         }
-//        .navigationBarTitle("\(exercise.name) ")
-            /*   Spacer()
-             RoundedRectangle(cornerRadius: 35)
-             .fill(Color.blue)
-             .frame(width: 418,height: 250)
-             .offset(y: 35)     */
-            
-//        }
+   
+
     }
-    //        .navigationBarTitle("Aerobic")
-    
-
-
 
 
 

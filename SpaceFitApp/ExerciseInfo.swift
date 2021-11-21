@@ -13,5 +13,6 @@ struct ExerciseInfo : Identifiable {
     var imageName: String
     var description: String
     var time: Int
+    var timeMin: Int
     
 }

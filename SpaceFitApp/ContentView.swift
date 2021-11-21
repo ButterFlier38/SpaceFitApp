@@ -22,7 +22,8 @@ var body: some View {
             PowerPage()
                 .tabItem{
                         Image(systemName: "flame.fill")
-                        Text("Power")
+                        Text("Power").navigationBarTitle("Power")
+                    
                 }
             CorePage()
                 .tabItem{
@@ -43,6 +44,7 @@ struct AerobicPage: View {
         GridItem(.flexible(minimum: 175))
     ]
     var body: some View {
+        
              VStack{
                     MyProgressBar(progressValue: $progressValue)
                         .frame(width: 150.0, height: 150.0)
@@ -60,9 +62,9 @@ struct AerobicPage: View {
                                             RoundedRectangle(cornerRadius: 15)
                                                 .stroke(Color.gray, lineWidth: 2)
                                         )
-                                 }
+                                 }.navigationBarTitle("Aeric").navigationBarTitleDisplayMode(.large)
                         }})
- }.navigationBarTitle("Aerobic")
+ }
 }}
     
 struct PowerPage: View {
@@ -92,7 +94,8 @@ struct PowerPage: View {
                                                 )
                                          }
                                 }})
-         }.navigationBarTitle("Power")
+            
+         }.navigationBarTitle("Power").navigationBarTitleDisplayMode(.large)
 }}
 
 struct CorePage: View {
@@ -103,6 +106,7 @@ struct CorePage: View {
         GridItem(.flexible(minimum: 175))
     ]
     var body: some View {
+        
         VStack{
                     MyProgressBar(progressValue: $progressValue)
                                 .frame(width: 150.0, height: 150.0)
@@ -120,10 +124,11 @@ struct CorePage: View {
                                                     RoundedRectangle(cornerRadius: 15)
                                                         .stroke(Color.gray, lineWidth: 2)
                                                 )
-                                         }
+                                         }.navigationBarTitle("Core").navigationBarTitleDisplayMode(.large)
                                 }})
-         }.navigationBarTitle("Core")
-          }
+         }
+          
+    }
     }
 
 struct ContentView_Previews: PreviewProvider {
