@@ -35,7 +35,7 @@ struct DescriptionView: View {
                             .stroke(Color.gray, lineWidth: 2)
                     )
                 
-                HStack{
+                HStack {
                     Image(systemName: "figure.walk").foregroundColor(.blue)
                         .font(.system(size: 25.0))
                     
@@ -48,7 +48,7 @@ struct DescriptionView: View {
                     .frame(width: 400, height: 125, alignment: .top)
                 
                 
-                HStack{
+                HStack {
                     Image(systemName: "timer").foregroundColor(.blue)
                         .font(.system(size: 25.0))
                     Text("Duration")
@@ -57,7 +57,7 @@ struct DescriptionView: View {
                 Text ("\(exercise.timeMin) min")
                     .font(.system(size: 15.0))
                 Spacer()
-                ZStack{
+                ZStack {
                     Spacer()
                     RoundedRectangle(cornerRadius: 35)
                         .fill(Color.blue)
@@ -76,8 +76,8 @@ struct DescriptionView: View {
                                 }
                             }
                         }
-                    HStack{
-                        Button{
+                    HStack {
+                        Button {
                             isStarted.toggle()
                             if timeRemaining == 0 {
                                 timeRemaining = exercise.time
@@ -115,7 +115,7 @@ struct DescriptionView: View {
                     }
                 }
             }
-        }.navigationTitle("\(exercise.name) ").navigationBarTitleDisplayMode(.large)
+        }.navigationTitle("\(exercise.name)").navigationBarTitleDisplayMode(.large)
             .onAppear{ timeRemaining = exercise.time }
     }
 }
