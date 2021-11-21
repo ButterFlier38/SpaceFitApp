@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct GrowingButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -73,7 +74,7 @@ struct DescriptionView: View {
                                 if timeRemaining == 0 {
                                     isStarted = false;
                                     exercise.done = true
-                                    print(exercise.done)
+                                    AudioServicesPlaySystemSound(SystemSoundID(1016))
                                 }
                             }
                         }
