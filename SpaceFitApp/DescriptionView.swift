@@ -21,6 +21,9 @@ struct GrowingButton: ButtonStyle {
 struct DescriptionView: View {
     @State var timeRemaining = 128
     @State var isStarted : Bool = false
+  
+    var exercise: ExerciseInfo
+//    var exercise: ExerciseInfo
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
    func convertSecondsToTime(timeInSeconds: Int)-> String{
        let minutes = timeInSeconds / 60
@@ -28,13 +31,13 @@ struct DescriptionView: View {
        return String(format:"%02i:%02i", minutes, seconds)
    }
     var body: some View {
-        NavigationView {
+//        NavigationView {
         VStack {
-            
+           
                        VStack {
                     
                     
-                    Image(uiImage: UIImage(named: "squat.png")!)
+                    Image(exercise.imageName)
                         .resizable().aspectRatio(contentMode: .fit)
                         .padding(.horizontal)
                         .frame(width: 200,height: 200)
@@ -51,7 +54,7 @@ struct DescriptionView: View {
 //                            .position(x: -90, y: 53)
                    }
                     
-                    Text("1: Stand with your feet shoulder-width apart.       2: Squat down as A with your arms bent next your side.                                                                            3: Drive back up through your heels into a jump, moving your arms down and back B.              *After you jump make sure to bend your knees on the landing, this will help you to land safely.           4: Repeat the process 20 times until the timer runs out.")
+                    Text("\(exercise.description)")
                         .font(.system(size: 18.0))
 //                        .position(x: 200, y: 114)
                         .frame(width: 400, height: 200, alignment: .top)
@@ -67,8 +70,8 @@ struct DescriptionView: View {
                         
                         
                     }
-                    let DurationSquat = "30 min"
-                    Text (DurationSquat)
+//                    let DurationSquat = "30 min"
+                    Text ("\(exercise.time) min")
                         .font(.system(size: 15.0))
                     
                     
@@ -85,7 +88,7 @@ struct DescriptionView: View {
                     .padding()
                     .background(Color(red: 0, green: 0, blue: 0.5))
                     .clipShape(Circle())    */
-                    
+//                        exercise.time = timeRemaining
                     Text(convertSecondsToTime(timeInSeconds:timeRemaining))
                         .font(.system(size: 40))
                         .position(x: 210, y: 70)
@@ -128,23 +131,22 @@ struct DescriptionView: View {
                     
                 }
             }
-            }.navigationBarTitle("Squat")
+          
+        }
+//        .navigationBarTitle("\(exercise.name) ")
             /*   Spacer()
              RoundedRectangle(cornerRadius: 35)
              .fill(Color.blue)
              .frame(width: 418,height: 250)
              .offset(y: 35)     */
             
-        }
+//        }
     }
     //        .navigationBarTitle("Aerobic")
     
 
-struct DescriptionView_Previews: PreviewProvider {
-    static var previews: some View {
-        DescriptionView().preferredColorScheme(.dark)
-    }
-}
+
+
 
 
 //ciao
