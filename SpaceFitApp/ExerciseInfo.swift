@@ -14,5 +14,5 @@ struct ExerciseInfo : Identifiable {
     var description: String
     var time: Int
     var timeMin: Int
-    
+    var done: Bool = false
 }
