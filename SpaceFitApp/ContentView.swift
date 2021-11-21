@@ -18,6 +18,7 @@ struct ContentView: View {
     
     
     var body: some View {
+        NavigationView {
         TabView {
             AerobicPage()
                 .tabItem{
@@ -36,6 +37,7 @@ struct ContentView: View {
                 }
         }
     }
+    }
 }
 
 let PageColor : Color = Color(red: 255/255, green: 255/255, blue: 255/255)
@@ -44,7 +46,7 @@ struct AerobicPage: View {
     
     @State private var progressValue: Float = 0.3
     var body: some View {
-        NavigationView {
+        
             ZStack{
                 Color.white
                     .opacity(0.1)
@@ -55,6 +57,7 @@ struct AerobicPage: View {
             VStack {
                 Spacer()
                 HStack{
+                    NavigationLink(destination: DescriptionView()){
                 Image(uiImage: UIImage(named: "aerobic1.JPEG")!)
                     .resizable()
                     .frame(width: 130, height: 130)
@@ -63,7 +66,7 @@ struct AerobicPage: View {
                             RoundedRectangle(cornerRadius: 15)
                                 .stroke(Color.gray, lineWidth: 2)
                         )
-                }
+                    }}
                 .padding()
                 
                 HStack{
@@ -118,12 +121,12 @@ struct AerobicPage: View {
             }
      }
     }
-}
+
 
 struct PowerPage: View {
     @State private var progressValue: Float = 0.0
     var body: some View {
-        NavigationView {
+        
             ZStack{
                 Color.white
                     .opacity(0.1)
@@ -190,13 +193,13 @@ struct PowerPage: View {
                 }
             }
      }
-    }
+    
 }
 
 struct CorePage: View {
     @State private var progressValue: Float = 0.0
     var body: some View {
-        NavigationView {
+        
             ZStack{
                 Color.white
                     .opacity(0.1)
@@ -264,5 +267,5 @@ struct CorePage: View {
             }
             }
      }
-    }
+    
 }

@@ -28,8 +28,9 @@ struct DescriptionView: View {
        return String(format:"%02i:%02i", minutes, seconds)
    }
     var body: some View {
+        NavigationView {
         VStack {
-            NavigationView {
+            
                        VStack {
                     
                     
@@ -125,9 +126,9 @@ struct DescriptionView: View {
                     }
                    
                     
-                }.navigationBarTitle("Squat")
+                }
             }
-            }
+            }.navigationBarTitle("Squat")
             /*   Spacer()
              RoundedRectangle(cornerRadius: 35)
              .fill(Color.blue)
