@@ -41,8 +41,8 @@ let PageColor : Color = Color.white
 
 struct AerobicPage: View {
     @StateObject var exerciseTypes = AerobicTypes()
-    @State private var progressValue: Float = 0.3
-    
+    @State var progressValue: Float = 0.0
+
     let layout = [
         GridItem(.flexible(minimum: 175)),
         GridItem(.flexible(minimum: 175))
@@ -53,7 +53,7 @@ struct AerobicPage: View {
             MyProgressBar(progressValue: $progressValue)
                 .frame(width: 150.0, height: 150.0)
                 .padding(30.0)
-
+            
             LazyVGrid(columns: layout,content: {
                 ForEach(exerciseTypes.Exercises) { exercise in
                     NavigationLink(destination: DescriptionView(exercise: exercise)) {
@@ -68,6 +68,17 @@ struct AerobicPage: View {
                             )
                     }
                     .navigationBarTitle("Aerobic").navigationBarTitleDisplayMode(.large)
+                    .onAppear {
+                        print("--")
+                        progressValue = exerciseTypes.Exercises.map {
+                            print($0.done)
+                            if $0.done {
+                                return 1.0 / Float(exerciseTypes.Exercises.count)   // Compute weight of each exercise
+                            } else {
+                                return 0.0
+                            }
+                        }.reduce(0.0, +)
+                    }
                 }
             })
         }
@@ -76,19 +87,19 @@ struct AerobicPage: View {
 
 struct PowerPage: View {
     @StateObject var exerciseTypes = PowerTypes()
-    @State private var progressValue: Float = 0.1
-
+    @State private var progressValue: Float = 0.0
+    
     let layout = [
         GridItem(.flexible(minimum: 175)),
         GridItem(.flexible(minimum: 175))
     ]
-
+    
     var body: some View {
         VStack {
             MyProgressBar(progressValue: $progressValue)
                 .frame(width: 150.0, height: 150.0)
                 .padding(30.0)
-
+            
             LazyVGrid(columns: layout,content: {
                 ForEach(exerciseTypes.Exercises) { exercise in
                     NavigationLink(destination: DescriptionView(exercise: exercise)) {
@@ -110,14 +121,14 @@ struct PowerPage: View {
 
 struct CorePage: View {
     @StateObject var exerciseTypes = CoreTypes()
-    @State private var progressValue: Float = 0.5
+    @State private var progressValue: Float = 0.0
+    
     let layout = [
         GridItem(.flexible(minimum: 175)),
         GridItem(.flexible(minimum: 175))
     ]
     var body: some View {
-        
-        VStack{
+        VStack {
             MyProgressBar(progressValue: $progressValue)
                 .frame(width: 150.0, height: 150.0)
                 .padding(30.0)

@@ -73,6 +73,7 @@ struct DescriptionView: View {
                                 if timeRemaining == 0 {
                                     isStarted = false;
                                     exercise.done = true
+                                    print(exercise.done)
                                 }
                             }
                         }
@@ -100,7 +101,7 @@ struct DescriptionView: View {
 
                         Spacer().frame(minWidth:5,maxWidth:140)
 
-                        NavigationLink(destination: ContentView()){
+                        NavigationLink(destination: ContentView()) {
                             Button("Stop") {
                                 isStarted = false;
                                 timeRemaining = exercise.time
