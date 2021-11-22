@@ -112,6 +112,16 @@ struct PowerPage: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color.gray, lineWidth: 2)
                             )
+                    }.onAppear {
+                        print("--")
+                        progressValue = exerciseTypes.Exercises.map {
+                            print($0.done)
+                            if $0.done {
+                                return 1.0 / Float(exerciseTypes.Exercises.count)   // Compute weight of each exercise
+                            } else {
+                                return 0.0
+                            }
+                        }.reduce(0.0, +)
                     }
                 }
             })
@@ -146,6 +156,17 @@ struct CorePage: View {
                                     .stroke(Color.gray, lineWidth: 2)
                             )
                     }.navigationBarTitle("Core").navigationBarTitleDisplayMode(.large)
+                     .onAppear {
+                    print("--")
+                    progressValue = exerciseTypes.Exercises.map {
+                        print($0.done)
+                        if $0.done {
+                            return 1.0 / Float(exerciseTypes.Exercises.count)   // Compute weight of each exercise
+                        } else {
+                            return 0.0
+                        }
+                    }.reduce(0.0, +)
+                }
                 }
             })
         }
