@@ -27,6 +27,7 @@ struct DescriptionView: View {
     var body: some View {
         VStack {
             VStack {
+                ZStack{
                 Image(exercise.imageName)
                     .resizable().aspectRatio(contentMode: .fit)
                     .padding(.horizontal)
@@ -35,7 +36,10 @@ struct DescriptionView: View {
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(Color.gray, lineWidth: 2)
                     )
-                
+                    if exercise.done{
+                        Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink).position(x: 150, y: 50)
+                    }
+                }
                 HStack {
                     Image(systemName: "figure.walk").foregroundColor(.blue)
                         .font(.system(size: 25.0))
@@ -102,7 +106,7 @@ struct DescriptionView: View {
 
                         Spacer().frame(minWidth:5,maxWidth:140)
 
-                        NavigationLink(destination: ContentView()) {
+                        
                             Button("Stop") {
                                 isStarted = false;
                                 timeRemaining = exercise.time
@@ -113,7 +117,7 @@ struct DescriptionView: View {
                             .clipShape(Capsule())
                             .font(.system(size: 20))
                             .position(x: 50, y: 145)
-                        }
+                        
                     }
                 }
             }
