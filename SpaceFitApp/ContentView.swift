@@ -88,10 +88,9 @@ struct AerobicPage: View {
                                     .stroke(Color.gray, lineWidth: 2)
                             )
                             Text("\(exercise.name)")
-//                                .foregroundColor(Color.black)
                         }
                         if exercise.done{
-                            Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink)
+                            Image(systemName: "checkmark.circle.fill").scaleEffect(3).foregroundColor(.pink)
                                 .position(x: 40, y: 30)
                         }}
                     }.onAppear {
@@ -143,7 +142,7 @@ struct PowerPage: View {
                             Text("\(exercise.name)")
                         }
                         if exercise.done{
-                            Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink)
+                            Image(systemName: "checkmark.circle.fill").scaleEffect(3).foregroundColor(.pink)
                                 .position(x: 40, y: 30)
                         }}
                     }.onAppear {
@@ -194,7 +193,7 @@ struct CorePage: View {
                         Text("\(exercise.name)")
                     }
                     if exercise.done{
-                        Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink)
+                        Image(systemName: "checkmark.circle.fill").scaleEffect(3).foregroundColor(.pink)
                             .position(x: 40, y: 30)
                     }}
                     }.onAppear {

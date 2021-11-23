@@ -37,7 +37,7 @@ struct DescriptionView: View {
                             .stroke(Color.gray, lineWidth: 2)
                     )
                     if exercise.done{
-                        Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink).position(x: 150, y: 50)
+                        Image(systemName: "checkmark.circle.fill").scaleEffect(3.5).foregroundColor(.pink).position(x: 140, y: 50)
                     }
                 }
                 HStack {
