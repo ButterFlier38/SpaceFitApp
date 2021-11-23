@@ -61,7 +61,7 @@ let PageColor : Color = Color.white
 struct AerobicPage: View {
     @StateObject var exerciseTypes = AerobicTypes()
     @State var progressValue: Float = 0.0
-//    @Binding var exercise: ExerciseInfo
+//    @Binding var exercise.done
     let layout = [
         GridItem(.flexible(minimum: 175)),
         GridItem(.flexible(minimum: 175))
@@ -77,6 +77,7 @@ struct AerobicPage: View {
                 ForEach(exerciseTypes.Exercises) { exercise in
                     NavigationLink(destination: DescriptionView(exercise: exercise)) {
                         ZStack{
+                        VStack{
                         Image(exercise.imageName)
                             .resizable()
                             .scaledToFit()
@@ -86,9 +87,12 @@ struct AerobicPage: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color.gray, lineWidth: 2)
                             )
+                            Text("\(exercise.name)")
+//                                .foregroundColor(Color.black)
+                        }
                         if exercise.done{
                             Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink)
-//                            .position(x: 150, y: 50)
+                                .position(x: 40, y: 30)
                         }}
                     }.onAppear {
                         print("--")
@@ -125,6 +129,8 @@ struct PowerPage: View {
             LazyVGrid(columns: layout,content: {
                 ForEach(exerciseTypes.Exercises) { exercise in
                     NavigationLink(destination: DescriptionView(exercise: exercise)) {
+                        ZStack{
+                        VStack{
                         Image(exercise.imageName)
                             .resizable()
                             .scaledToFit()
@@ -134,6 +140,12 @@ struct PowerPage: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color.gray, lineWidth: 2)
                             )
+                            Text("\(exercise.name)")
+                        }
+                        if exercise.done{
+                            Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink)
+                                .position(x: 40, y: 30)
+                        }}
                     }.onAppear {
                         print("--")
                         progressValue = exerciseTypes.Exercises.map {
@@ -168,6 +180,8 @@ struct CorePage: View {
             LazyVGrid(columns: layout,content: {
                 ForEach(exerciseTypes.Exercises){exercise in
                     NavigationLink(destination: DescriptionView(exercise: exercise)) {
+                        ZStack{
+                        VStack{
                         Image(exercise.imageName)
                             .resizable()
                             .scaledToFit()
@@ -177,8 +191,13 @@ struct CorePage: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color.gray, lineWidth: 2)
                             )
+                        Text("\(exercise.name)")
                     }
-                     .onAppear {
+                    if exercise.done{
+                        Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink)
+                            .position(x: 40, y: 30)
+                    }}
+                    }.onAppear {
                     print("--")
                     progressValue = exerciseTypes.Exercises.map {
                         print($0.done)
