@@ -9,40 +9,59 @@ import SwiftUI
 
 struct ContentView: View {
 //    init() {
-//        UITabBar.appearance().backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+//       UITabBar.appearance().backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
 //        UINavigationBar.appearance().backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
 //    }
     @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
+    @State var tabSelection: Tabs = .tab1
+    
     var body: some View {
         NavigationView{
-            TabView {
+            TabView(selection: $tabSelection){
                 AerobicPage()
-                    .tabItem{
-                        Image(systemName: "heart.fill")
-                        Text("Aerobic")
-                    }
+                .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("Aerobic") }
+                .tag(Tabs.tab1)
                 PowerPage()
-                    .tabItem{
-                        Image(systemName: "flame.fill")
-                        Text("Power").navigationBarTitle("Power")
-                        
-                    }
+                .tabItem {
+                    Image(systemName: "flame.fill")
+                    Text("Power") }
+                .tag(Tabs.tab2)
                 CorePage()
-                    .tabItem{
-                        Image(systemName: "square.grid.3x3.middle.filled")
-                        Text("Core")
-                    }
+                .tabItem {
+                    Image(systemName: "square.grid.3x3.middle.filled")
+                    Text("Core") }
+                .tag(Tabs.tab3)
+
+               
             }
-        }.fullScreenCover(isPresented: $shouldShowOnboarding, content: {TutorialView(shouldShowOnboarding: $shouldShowOnboarding)})
+            .navigationBarTitle(returnNaviBarTitle(tabSelection: self.tabSelection))
+            .fullScreenCover(isPresented: $shouldShowOnboarding, content: {TutorialView(shouldShowOnboarding: $shouldShowOnboarding)})
+        }
     }
-}
+    
+    enum Tabs{
+        case tab1, tab2, tab3
+    }
+    
+    func returnNaviBarTitle(tabSelection: Tabs) -> String{
+        switch tabSelection{
+            case .tab1: return "Aerobic"
+            case .tab2: return "Power"
+            case .tab3: return "Core"
+        }
+    }
+    
+    }
+
 
 let PageColor : Color = Color.white
 
 struct AerobicPage: View {
     @StateObject var exerciseTypes = AerobicTypes()
     @State var progressValue: Float = 0.0
-
+//    @Binding var exercise: ExerciseInfo
     let layout = [
         GridItem(.flexible(minimum: 175)),
         GridItem(.flexible(minimum: 175))
@@ -57,6 +76,7 @@ struct AerobicPage: View {
             LazyVGrid(columns: layout,content: {
                 ForEach(exerciseTypes.Exercises) { exercise in
                     NavigationLink(destination: DescriptionView(exercise: exercise)) {
+                        ZStack{
                         Image(exercise.imageName)
                             .resizable()
                             .scaledToFit()
@@ -66,9 +86,11 @@ struct AerobicPage: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color.gray, lineWidth: 2)
                             )
-                    }
-                    .navigationBarTitle("Aerobic").navigationBarTitleDisplayMode(.large)
-                    .onAppear {
+                        if exercise.done{
+                            Image(systemName: "checkmark.circle.fill").scaleEffect(4).foregroundColor(.pink)
+//                            .position(x: 150, y: 50)
+                        }}
+                    }.onAppear {
                         print("--")
                         progressValue = exerciseTypes.Exercises.map {
                             print($0.done)
@@ -125,7 +147,7 @@ struct PowerPage: View {
                     }
                 }
             })
-        }.navigationBarTitle("Power")
+        }
     }
 }
 
@@ -155,7 +177,7 @@ struct CorePage: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color.gray, lineWidth: 2)
                             )
-                    }.navigationBarTitle("Core").navigationBarTitleDisplayMode(.large)
+                    }
                      .onAppear {
                     print("--")
                     progressValue = exerciseTypes.Exercises.map {
