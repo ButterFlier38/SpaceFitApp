@@ -12,7 +12,7 @@ struct ContentView: View {
         UITabBar.appearance().backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
         UINavigationBar.appearance().backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
     }
-    
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
     var body: some View {
         NavigationView{
             TabView {
@@ -33,7 +33,7 @@ struct ContentView: View {
                         Text("Core")
                     }
             }
-        }
+        }.fullScreenCover(isPresented: $shouldShowOnboarding, content: {TutorialView(shouldShowOnboarding: $shouldShowOnboarding)})
     }
 }
 

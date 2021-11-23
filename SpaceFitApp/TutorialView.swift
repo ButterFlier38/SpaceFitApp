@@ -21,6 +21,8 @@ struct TutorialView: View {
     @State var opac = 0.0
     @State var opacEarth = 1.0
     @State var scale: CGFloat = 1
+    @State var showsDismissButton: Bool = false
+    @Binding var shouldShowOnboarding: Bool 
  var body: some View {
         ZStack{
             Image(uiImage: UIImage(named: "Earth.png")!)
@@ -42,11 +44,13 @@ struct TutorialView: View {
                     .fontWeight(.bold)
             }.padding(.top).position(x:textx,y:texty)
                 .animation(.linear(duration:0.7), value: texty)
+            ZStack{
             Button{
                 texty = 100
                 opac = 1.0
                 scale = 1.7
                 opacEarth = 0.4
+                showsDismissButton = true
             }label:{
                 ZStack {
                     RoundedRectangle(cornerRadius: 20).frame(width: 250, height: 50, alignment: .center)
@@ -56,7 +60,19 @@ struct TutorialView: View {
                         .padding()
                 }
            }
-        }
+        
+            if showsDismissButton{
+            Button{
+                shouldShowOnboarding.toggle()
+            }label:{
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20).frame(width: 250, height: 50, alignment: .center)
+                    Text("Get Started")
+                        .font(.title)
+                        .foregroundColor(Color.black)
+                        .padding()
+                }
+        }}}}
             VStack(alignment: .leading, spacing: 0.0){
                 HStack(){
                     Spacer().frame(minWidth:5,maxWidth:10)
@@ -100,13 +116,10 @@ struct TutorialView: View {
                               }
                         }.padding(.bottom).scaleEffect(scale).animation(.easeIn(duration:2.0), value: scale)
             
-        }
+        
     }
 }
-   
+}
 
-struct TutorialView_Previews: PreviewProvider {
-    static var previews: some View {
-        TutorialView().preferredColorScheme(.dark)
-    }
-}
+
+
