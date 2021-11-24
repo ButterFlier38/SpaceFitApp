@@ -123,6 +123,7 @@ struct TutorialView: View {
             
       
     }
+//     
 //        .background(
 //        LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottomTrailing))
 }
