@@ -30,8 +30,10 @@ struct DescriptionView: View {
                 ZStack{
                 Image(exercise.imageName)
                     .resizable().aspectRatio(contentMode: .fit)
+                    .cornerRadius(15)
                     .padding(.horizontal)
                     .frame(width: 200,height: 200)
+                   
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(Color.gray, lineWidth: 2)
@@ -107,7 +109,7 @@ struct DescriptionView: View {
                         Spacer().frame(minWidth:5,maxWidth:140)
 
                         
-                            Button("Stop") {
+                            Button("Reset") {
                                 isStarted = false;
                                 timeRemaining = exercise.time
                             }

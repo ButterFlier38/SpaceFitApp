@@ -25,6 +25,9 @@ struct TutorialView: View {
     @Binding var shouldShowOnboarding: Bool 
  var body: some View {
         ZStack{
+            RoundedRectangle(cornerRadius: 15)
+                        .foregroundColor(Color.black)
+                        .scaleEffect(2)
             Image(uiImage: UIImage(named: "Earth.png")!)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -42,6 +45,7 @@ struct TutorialView: View {
                 Text(" Welcome to SpaceFit!")
                     .font(.title)
                     .fontWeight(.bold)
+                    .foregroundColor(Color.white)
             }.padding(.top).position(x:textx,y:texty)
                 .animation(.linear(duration:0.7), value: texty)
             ZStack{
@@ -69,7 +73,7 @@ struct TutorialView: View {
                     RoundedRectangle(cornerRadius: 20).frame(width: 250, height: 50, alignment: .center)
                     Text("Get Started")
                         .font(.title)
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                         .padding()
                 }
         }}}}
@@ -78,10 +82,11 @@ struct TutorialView: View {
                     Spacer().frame(minWidth:5,maxWidth:10)
                 Image(systemName: "heart.fill").foregroundColor(.pink).opacity(opac)
                     Spacer().frame(minWidth:5,maxWidth:20)
-                            Text("Let's Stay Fit for The Space!")
+                            Text("Let's get fit for the Space!")
                                 .font(.footnote)
                                 .fontWeight(.semibold)
                                 .opacity(opac)
+                                .foregroundColor(Color.white)
                     
                 }
                             Spacer().frame(height:30)
@@ -89,35 +94,37 @@ struct TutorialView: View {
                     Spacer().frame(minWidth:5,maxWidth:10)
                     Image(systemName: "crown.fill").foregroundColor(.pink).opacity(opac)
                     Spacer().frame(minWidth:5,maxWidth:20)
-                            Text("Improve your :").font(.footnote).fontWeight(.semibold).opacity(opac)
+                            Text("Improve your :").font(.footnote).fontWeight(.semibold).opacity(opac).foregroundColor(Color.white)
                 }
                 HStack{
                     Spacer().frame(minWidth:5,maxWidth:60)
-                                Image(systemName: "heart.fill").scaleEffect(0.6).opacity(opac)
-                            Text("Aerobic skills").font(.caption2).opacity(opac)
+                                Image(systemName: "heart.fill").scaleEffect(0.6).opacity(opac).foregroundColor(.pink)
+                            Text("Aerobic skills").font(.caption2).opacity(opac).foregroundColor(Color.white)
                             }
                             HStack{
                                 Spacer().frame(minWidth:5,maxWidth:63)
-                                Image(systemName: "flame.fill").scaleEffect(0.6).opacity(opac)
-                                Text("Power skills").font(.caption2).opacity(opac)
+                                Image(systemName: "flame.fill").scaleEffect(0.6).opacity(opac).foregroundColor(.pink)
+                                Text("Power skills").font(.caption2).opacity(opac).foregroundColor(Color.white)
                             }
                             HStack{
                                 Spacer().frame(minWidth:0,maxWidth:60)
-                                Image(systemName: "square.grid.3x3.middle.filled").scaleEffect(0.6).opacity(opac)
-                                Text("Core skills").font(.caption2).opacity(opac)
+                                Image(systemName: "square.grid.3x3.middle.filled").scaleEffect(0.6).opacity(opac).foregroundColor(.pink)
+                                Text("Core skills").font(.caption2).opacity(opac).foregroundColor(Color.white)
                             }
                             Spacer().frame(height:30)
                 ZStack{
                             HStack(){
                                
                                 Image("CircleProgress").opacity(opac).scaleEffect(0.5)
-                            Text("Take note of your progress").font(.footnote).fontWeight(.semibold).opacity(opac)
+                            Text("Keep track of your progress").font(.footnote).fontWeight(.semibold).opacity(opac).foregroundColor(Color.white)
                                 }
                               }
                         }.padding(.bottom).scaleEffect(scale).animation(.easeIn(duration:2.0), value: scale)
             
-        
+      
     }
+//        .background(
+//        LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottomTrailing))
 }
 }
 

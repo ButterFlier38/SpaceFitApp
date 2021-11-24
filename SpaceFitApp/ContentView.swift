@@ -81,6 +81,7 @@ struct AerobicPage: View {
                         Image(exercise.imageName)
                             .resizable()
                             .scaledToFit()
+                            .cornerRadius(15)
                             .frame(width: 150, height: 150)
                             .padding(.all)
                             .overlay(
@@ -133,6 +134,7 @@ struct PowerPage: View {
                         Image(exercise.imageName)
                             .resizable()
                             .scaledToFit()
+                            .cornerRadius(15)
                             .frame(width: 150, height: 150)
                             .padding(.all)
                             .overlay(
@@ -184,6 +186,7 @@ struct CorePage: View {
                         Image(exercise.imageName)
                             .resizable()
                             .scaledToFit()
+                            .cornerRadius(15)
                             .frame(width: 150, height: 150)
                             .padding(.all)
                             .overlay(
